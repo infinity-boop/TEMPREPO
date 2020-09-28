@@ -14,6 +14,13 @@ diff21(19) → 2
 diff21(10) → 11
 diff21(21) → 0
 '''
+
+    if n <= 21:
+        return abs(n-21)
+    else:
+        return (abs(n-21))*2
+
+
     pass
 
 
@@ -22,18 +29,18 @@ diff21(21) → 0
 
 def catchFailures(testCase, result):
     global failures
-    
+
     try:
         assert eval(testCase) == result, "Test Case Failed: "+testCase+ " → "+str(result)
     except Exception as e:
         failures += 1
         print(e)
-            
+
 
 
 def test():
     global failures
-    
+
     catchFailures('diff21(19)', 2)
     catchFailures('diff21(10)', 11)
     catchFailures('diff21(21)', 0)
